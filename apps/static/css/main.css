@@ -1,16 +1,25 @@
 .center{
-	top:40%;
+	margin: 60px;
 	text-align: center;
 }
 
 .main-text{
 	font-family: 'Nanum Myeongjo';
+	margin-bottom: 50px
 	
 }
 
 .center input{
 	border:0;
-	border-bottom: 2px solid #fff;
+	border-bottom: 1px solid black;
 	text-align: center;
 	width: 300px;
+}
+
+.center input:focus{
+	border:0;
+	border-bottom: 1px solid black;
+	text-align: center;
+	width: 300px;
+	outline: none; 
 }

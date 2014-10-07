@@ -8,7 +8,7 @@ from google.appengine.ext import db as gdb
 import datetime
 from sqlalchemy import desc,asc
 
-from apps.forms import JoinForm, LoginForm, HistoryAddForm
+from apps.forms import JoinForm, LoginForm
 
 
 
@@ -16,10 +16,14 @@ from apps.forms import JoinForm, LoginForm, HistoryAddForm
 
 
 @app.route('/', methods=['GET', 'POST'])
+def main():
+	return render_template('main.html', form2 = JoinForm(), form = LoginForm())
+
+@app.route('/index', methods=['GET', 'POST'])
 def index():
-	
-	
-	return render_template("main.html")
+
+	return render_template('index.html', form2 = JoinForm(), form = LoginForm(), city_title=u"서울시")
+
 
 
 # @error Handlers

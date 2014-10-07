@@ -19,8 +19,8 @@ class Comment(db.Model):
 	location_id =  db.Column(db.String(100), db.ForeignKey('Location.id'))
 	content = db.Column(db.String(150))
 	user_email = db.Column(db.String(255), db.ForeignKey('User.email'))	
-	like = db.Column(db.Integer(99999))
-	dislike = db.Column(db.Integer(99999))
+	like = db.Column(db.Integer)
+	dislike = db.Column(db.Integer)
 	created_time = db.Column(db.DateTime(), default=db.func.now())
 
 class Location(db.Model):

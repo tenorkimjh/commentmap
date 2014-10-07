@@ -1,13 +1,28 @@
 {% extends "layout.html" %}
 
 {% block content %}
+	
+<!-- banner start -->
+{% block banner %}
+	{% include "banner.html" %}
+{% endblock %}
+<!-- banner end -->
+
+<hr>
 <div class="row">
 	<!-- left div start -->
 	<div class="col-sm-8">
 		<!-- comment form start -->
 		<div class="comment-form">
 			<div class="form-group float-label-control">
-				<input type="text" class="form-control empty" placeholder="땡땡시에 한줄 남겨주세요.">
+				<h2 class="ask">{{city_title}}의
+					<select class="selectpicker" data-style="btn-info" style="display: none;">
+						<option>카테고리</option>
+						<option>먹거리</option>
+						<option>즐길거리</option>
+					</select>는 어땠나요?
+				</h2>
+				<input type="text" class="form-control empty" placeholder="{{city_title}}에 한줄 남겨주세요.">
 			</div>
 			<button class="comment-btn btn btn-default">쓰기</button>
 		</div>

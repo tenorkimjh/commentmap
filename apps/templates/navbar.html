@@ -22,18 +22,57 @@
 			</div><!-- /input-group -->
 		</div>
 		
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="pull-right nav navbar-nav">
-				<li>
-					<a href="#">gabriel0218@naver.com</a>
-				</li>
-				<li>
-					<a href="#">Logout</a>
-				</li>
-			</ul>
-		</div>
+
+		<!-- if logged in -->
+		{% if session['user_email'] %}
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="pull-right nav navbar-nav">
+					<li>
+						<a href="#">gabriel0218@naver.com</a>
+					</li>
+					<li>
+						<a href="#">Logout</a>
+					</li>
+				</ul>
+			</div>
+		{% else %}
+		<!-- if not logged in  -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="pull-right nav navbar-nav">
+					<li class="dropdown">
+						<a class="dropdown-toggle" href="#" data-toggle="dropdown">로그인 <strong class="caret"></strong></a>
+						<div class="dropdown-menu" >
+							<form method="post"  accept-charset="UTF-8">
+							{{ form.hidden_tag() }}
+							{% from "_form_field.html" import render_field %}
+							{% for field in form if field.widget.input_type != 'hidden' %}
+								{{ render_field(field, class="form-control") }}
+							{% endfor %}
+							<input class="btn btn-primary btn-block" type="submit" id="sign-in" value="로그인">
+							</form>
+						</div>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" href="#" data-toggle="dropdown">회원가입 <strong class="caret"></strong></a>
+						<div class="sign-up dropdown-menu " style="padding: 15px;">
+							<form method="post" accept-charset="UTF-8">
+								{{ form2.hidden_tag() }}
+								{% from "_form_field.html" import render_field %}
+								{% for field in form2 if field.widget.input_type != 'hidden' %}
+									{{ render_field(field, class="form-control") }}
+								{% endfor %}
+							
+								<input class="btn btn-primary btn-block" type="submit" id="sign-in" value="회원가입">
+							</form>
+							<label style="text-align:center;margin-top:5px">or</label>
+                                <input class="btn btn-primary btn-block" type="button" id="sign-up-facebook" value="Facebook으로 회원가입">
+						</div>
+					</li>
+				</ul>
+			</div>
+		{% endif %}
 		<!-- /.navbar-collapse -->
+
 	</div>
 <!-- /.container -->
 </nav>
