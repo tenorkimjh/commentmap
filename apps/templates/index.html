@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row">
+	<!-- left div start -->
+	<div class="col-sm-8">
+		<!-- comment form start -->
+		<div class="comment-form">
+			<div class="form-group float-label-control">
+				<input type="text" class="form-control empty" placeholder="땡땡시에 한줄 남겨주세요.">
+			</div>
+			<button class="comment-btn btn btn-default">쓰기</button>
+		</div>
+		<!-- comment form end -->
+		{% for i in range(0,4)%}
+		<div class="comment-writebox">
+			<span class="comment-title">명동칼국수 스타시티에서 먹고 난 후 , 잘 먹었다고 생각되는 집이 한 세 고 되는데 그 중 한 곳</span>
+			<span class="pull-right">2014-10-03 멋사호랑이</span>
+			<span class="pull-left">태그: 스타시티 명동칼국수 개맛</span>
+			<p style="height:10px"></p>
+		</div>	
+		{% endfor %}
+	</div>
+	<!-- left div end -->
+
+	<!-- right div start -->
+	<div class="col-sm-4">
+		{% for i in range(0,4)%}
+		<div class="comment-writebox">
+			<p class="log-title">명동칼국수 스타시티에서 먹고 난 후 , 잘 먹었다고 생각되는 집이 한 세 고 되는데 그 중 한 곳</p>
+			<p class="pull-right log-author">멋사호랑이</p>
+			<p style="height:10px"></p>
+		</div>	
+		{% endfor %}
+	</div>
+	<!-- right div end -->
+</div>
+<!-- /.row -->
+
+
+{% endblock %}

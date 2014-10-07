@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block layout %}
+	<!-- navbar start -->
+	{% block navbar %}
+		{% include "navbar.html" %}
+	{% endblock %}
+	<!-- navbar end -->
+
+	<!-- banner start -->
+	{% block banner %}
+		{% include "banner.html" %}
+	{% endblock %}
+	<!-- banner end -->
+
+	<!-- content start -->
+	<div class="container">
+		<hr>
+		{% block content %} {% endblock %}
+		<hr>
+		<!-- footer start -->
+		{% block footer %}
+			{% include "footer.html" %}
+		{% endblock %}
+		<!-- footer end -->
+    </div>
+	<!-- content end -->
+
+	
+{% endblock %}

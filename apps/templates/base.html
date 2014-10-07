@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title></title>
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/banner.css">
+  <!-- css end -->
+    
+  <!--font-->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+  <style>
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    @import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+    @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+    @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+    @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+    .hn {font-family: 'Hanna';}
+    .nbs {font-family: 'Nanum Brush Script';}
+    .ng {font-family: 'Nanum Gothic';}
+    .ngc {font-family: 'Nanum Gothic Coding';}
+    .nm {font-family: 'Nanum Myeongjo';}
+    .nps {font-family: 'Nanum Pen Script';}
+  </style>
+  <!-- font end -->
+  
+
+  <!-- jquery -->
+  <script src="/static/js/jquery-1.11.1.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/base.js"></script>
+  <script src="http://js.pusher.com/2.2/pusher.min.js"></script>
+  <!-- jquery end -->
+
+  {% block favicon %}
+      <link rel="shortcut icon" href="/static/images/favicon.ico"/>
+  {% endblock %}
+  
+</head>
+<body>
+
+{% block layout %}{% endblock %}
+
+</body>
+</html>
+
