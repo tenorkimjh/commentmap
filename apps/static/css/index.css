@@ -2,7 +2,7 @@
 	width:1000px;
 }
 
-a:hover{
+.navbar-inverse .navbar-brand:hover{
 	font-color:black;
 }
 
@@ -35,6 +35,7 @@ a:hover{
 	width : auto;
 	padding: 2px 4px;
 	border-radius: 0px;
+	float:right;
 }
 .comment-writebox{
 	padding: 3px 5px;
@@ -59,4 +60,30 @@ a:hover{
 	font-family: 'Nanum Myeongjo';
 	margin-top: 10px;
 	margin-left: 5px;
+	display: -webkit-box
+}
+
+/**/
+#category-btn .notActive{
+    color: #3276b1;
+    background-color: #fff;
+}
+
+#input-form{
+	display: none;
+}
+
+.input-bottom{
+	background-color: #aaa;
+	display: flex;
+	margin-top: 5px;
+}
+.input-bottom input{
+	width: 200px;
+	border: 1px solid #aaa;
+}
+.input-bottom input:focus{
+	width: 200px;
+	border: 1px solid #aaa;
+
 }
