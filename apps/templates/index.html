@@ -15,7 +15,8 @@
 		<!-- comment form start -->
 		<div class="comment-form">
 			<div class="form-group float-label-control">
-				<h2 class="ask">{{ Local_name }}의
+				{% if local_name %}
+				<h2 class="ask">{{ local_info.local_name }}의
 					<div class="input-group">
 	    				<div id="category-btn" class="btn-group">
 	    					<a class="btn btn-primary btn-sm notActive" data-toggle="happy" data-title="food">먹거리</a>
@@ -26,6 +27,27 @@
 				</h2>
 			
 				<div id="input-form">
+					<input type="text" class="form-control empty" placeholder="{{ local_name }}의 OO에  한 줄 남겨주세요!">
+
+					<div class="input-bottom">
+						<input type="text" class="form-control empty" placeholder="해쉬태그">
+						<button class="comment-btn btn btn-default">쓰기</button>
+					</div>
+					
+				</div>
+			{% for i in range(0,4)%}
+			<div class="comment-writebox">
+				<span class="comment-title">명동칼국수 스타시티에서 먹고 난 후 , 잘 먹었다고 생각되는 집이 한 세 고 되는데 그 중 한 곳</span>
+				<span class="pull-right">2014-10-03 멋사호랑이</span>
+				<span class="pull-left">태그: 스타시티 명동칼국수 개맛</span>
+				<p style="height:10px"></p>
+		</div>	
+			{% endfor %}
+				{% else %}
+				<h4 class="ask">아직 코멘트가 등록되지 않은 지역이네요! 첫 코멘트를 남겨주세요!
+				</h4>
+
+				<div id="input-form">
 					<input type="text" class="form-control empty" placeholder="{{ Local_name }}의 OO에  한 줄 남겨주세요!">
 
 					<div class="input-bottom">
@@ -34,22 +56,17 @@
 					</div>
 					
 				</div>
+				{% endif %}
 			</div>
 			
 		</div>
 		<!-- comment form end -->
-		{% for i in range(0,4)%}
-		<div class="comment-writebox">
-			<span class="comment-title">명동칼국수 스타시티에서 먹고 난 후 , 잘 먹었다고 생각되는 집이 한 세 고 되는데 그 중 한 곳</span>
-			<span class="pull-right">2014-10-03 멋사호랑이</span>
-			<span class="pull-left">태그: 스타시티 명동칼국수 개맛</span>
-			<p style="height:10px"></p>
-		</div>	
-		{% endfor %}
+		
 	</div>
 	<!-- left div end -->
 
 	<!-- right div start -->
+	{% if local_info.comment %}
 	<div class="col-sm-4">
 		{% for i in range(0,4)%}
 		<div class="comment-writebox">
@@ -59,6 +76,15 @@
 		</div>	
 		{% endfor %}
 	</div>
+	{% else %}
+	<div class="col-sm-4">
+		<div class="comment-writebox">
+			<p class="log-title">코멘트 청정지역입니다. 코멘트를 남겨주세요.</p>
+		</div>	
+		
+	</div>
+	{%  endif %}
+
 	<!-- right div end -->
 </div>
 <!-- /.row -->

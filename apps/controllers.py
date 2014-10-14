@@ -9,14 +9,15 @@ import datetime
 from sqlalchemy import desc,asc
 
 from apps.forms import JoinForm, LoginForm
-
-
-
-
-
+from apps.models import (
+	User,
+	Comment,
+	Location
+	)
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
+	
 	return render_template('main.html', form2 = JoinForm(), form = LoginForm())
 
 @app.route('/index', methods=['GET', 'POST'])
@@ -29,6 +30,21 @@ def index():
 # @error Handlers
 #
 # Handle 404 errors
+
+@app.route('/', methods=['GET', 'POST'])
+def search():
+	if request.method == 'GET':
+		input_localname = request.args['city_input']
+		local_info = Location.query.get(local_name)
+		if local_info == input_localname:
+			return render_template('index.html', local_info=local_info)
+		else:
+			return render_template('index.html')
+	else:
+		render_template('index.html')
+
+
+
 @app.errorhandler(404)
 def page_not_found(e):
 	return render_template('error/404.html'), 404
